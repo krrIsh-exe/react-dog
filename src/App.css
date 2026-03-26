@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+}
+
+/* BACKGROUND LAYER */
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+
+  background-image: url('background-xl.png');
+  background-repeat: repeat-y; /* 👈 repeats vertically */
+  background-size: 100% 100vh; /* 👈 one image per screen */
+}
+
+/* SECTION */
+
+/*    --gap:3rem;   this is for creating root elements people also calls it custom elements*/
+section {
+  border: 1px solid white;
+  --gap:3rem;                       
+  min-height: 100vh;
+  position: relative;
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+
+}
+
+canvas {
+  z-index: 0;
+}
+
+/* MAIN */
+main {
+  position: relative;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0.5rem 1rem 0.5rem;
+  z-index: 2;
+}
+
+/* FIXED SELECTOR */
+.nav-elem.second {
+  font-family: system-ui;
+}
+
+.nav-elem:nth-child(2)
+i{
+color: red;
+}
+
+
+
+
+/* MIDDLE */
+.middle {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 3rem;
+  gap:var(--gap);
+
+}
+
+/* CHILDREN (flattened from nesting) */
+.middle .left,
+.middle .right {
+  width: 50%;
+}
+
+.middle .left {
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+  padding-block: 4rem;
+}
+
+
+.middle .left h1 {
+  text-align: right;
+  width: 100%;
+  font-size: 90px;
+}
+
+.bottom{
+  display: flex;
+  gap:var(--gap);
+}
+
+.bottom .bleft,
+.bottom .bright {
+  width: 50%;
+
+}
+.fline{
+  width: 55rem;
+  background-color: rgba(255, 0, 0, 0.525);
+  height: 1px; 
+  position: absolute;
+  transform: rotate(45deg)translate(0,-20rem);
+}
+.sline{
+  width: 20rem;
+  background-color: rgba(255, 0, 0, 0.525);
+  height: 1px; 
+  position: absolute;
+  transform: rotate(135deg);
+  top: 28%;
+  right:8%;
+}

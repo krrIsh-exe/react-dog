@@ -1,0 +1,315 @@
+// 🎮 What is OrbitControls?
+// 👉 It lets you rotate, zoom, and move around your 3D object with mouse.
+
+// Without it → camera is fixed.
+
+// With it → you can explore the scene.
+
+// 📦 Where it comes from?
+// From:
+
+
+
+
+
+// npm i @react-three/drei
+
+
+
+// You import it like:
+
+
+
+
+
+// import { OrbitControls } from "@react-three/drei"
+
+
+
+// ✅ Basic Usage (Most Important)
+// Inside <Canvas>:
+
+
+
+
+
+// <Canvas>
+
+// <mesh>
+
+// <boxGeometry />
+
+// <meshBasicMaterial color="orange" />
+
+// </mesh>
+
+
+
+// <OrbitControls />
+
+// </Canvas>
+
+
+
+// That’s it.
+
+// Now:
+
+// Left mouse → rotate
+// Scroll → zoom
+// Right click → pan
+// 🧠 What OrbitControls Actually Does
+// It controls:
+
+// 👉 the camera
+
+// Not the object.
+
+// You are moving around the object,
+
+// not moving the object.
+
+// Very important concept.
+
+// ⚙️ Important Props (Only the useful ones)
+// 1️⃣ Disable zoom
+
+
+
+
+// <OrbitControls enableZoom={false} />
+
+
+
+// 2️⃣ Disable rotation
+
+
+
+
+// <OrbitControls enableRotate={false} />
+
+
+
+// 3️⃣ Limit vertical rotation
+
+
+
+
+// <OrbitControls
+
+// minPolarAngle={Math.PI / 4}
+
+// maxPolarAngle={Math.PI / 2}
+
+// />
+
+
+
+// Polar angle = up-down rotation.
+
+// 4️⃣ Smooth movement (very useful)
+
+
+
+
+// <OrbitControls enableDamping dampingFactor={0.05} />
+
+
+
+// Makes camera feel smooth and professional.
+
+// 🧠 Professional Clean Version (Best Practice)
+
+
+
+
+// <OrbitControls
+
+// enableDamping
+
+// dampingFactor={0.05}
+
+// zoomSpeed={0.8}
+
+// />
+
+
+
+// This is what most devs use.
+
+// ⚠️ Important Rule
+// OrbitControls must be inside <Canvas>.
+
+// Correct:
+
+
+
+
+
+// <Canvas>
+
+// <Scene />
+
+// <OrbitControls />
+
+// </Canvas>
+
+
+
+// Wrong:
+
+
+
+
+
+// <OrbitControls /> ❌ outside Canvas
+
+
+
+// 🔥 Why Drei Version is Better
+// Instead of manually doing:
+
+
+
+
+
+// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+
+
+
+// Drei version:
+
+// Automatically connects to camera
+// Cleaner
+// Less code
+// React-friendly
+// 🧩 Mental Model (Very Important)
+// Think like this:
+
+// Camera = Your Eyes
+
+// OrbitControls = Your Neck
+
+// You are turning your neck around the object.
+
+// 🚀 Minimal Working Example
+
+
+
+
+// import { Canvas } from "@react-three/fiber"
+
+// import { OrbitControls } from "@react-three/drei"
+
+
+
+// export default function App() {
+
+// return (
+
+// <Canvas>
+
+// <mesh>
+
+// <boxGeometry />
+
+// <meshStandardMaterial color="skyblue" />
+
+// </mesh>
+
+
+
+// <ambientLight />
+
+// <OrbitControls enableDamping />
+
+// </Canvas>
+
+// )
+
+// }
+
+
+
+// Done.
+
+// 🟢 Final Short Summary
+// OrbitControls =
+
+// Controls camera
+// Lets you rotate, zoom, pan
+// Comes from drei
+// Must be inside Canvas
+// Use enableDamping for smooth effect
+
+
+
+
+
+
+// we can return only single component inside return if we want to return more components then we can use fragment for that
+
+
+
+// we can not see standard material without light
+
+// in 3 js there are some materials which are visible even without light like basic material
+
+
+
+
+
+// what are the call backs in 3 js
+
+// function given to another function to run later
+
+// A function that is passed as an argument to another function and executed later.
+
+// Think of it as “a function that runs when something happens.”
+
+
+
+
+
+// CallbackPurposeuseFrame()runs every frameonClickclick interactiononPointerOverhoveronPointerOutmouse leaveuseEffect()run when something changestraverse()run function on every object
+
+
+
+// Traverse => Runs once for each and every object
+
+
+
+
+
+
+
+// renderer and the texture always shows dull colors hence we have to set them up for better color grading
+
+
+
+// how model will react after scrolling we will see that thing 
+// we will use gsap for that 
+
+
+// we will use Scroll trigger
+// Scroll Trigger 
+//  when we wanted to animate something while user scrolls website we uses scroll trigger
+
+
+// <Orbit control/>
+
+// let's you rotate you 3d model
+
+
+gsap 
+greensock animation platform
+it is javascript library
+it help us to perform complex animation in very few code
+
+
+
+
+// what is meaning of tl
+//tl 
+
+// is basically stands for the timeline
