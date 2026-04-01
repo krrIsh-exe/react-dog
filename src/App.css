@@ -4,44 +4,15 @@
   box-sizing: border-box;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   width: 100%;
 }
 
-/* BACKGROUND LAYER */
-.background {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
 
-  background-image: url('background-xl.png');
-  background-repeat: repeat-y; /* 👈 repeats vertically */
-  background-size: 100% 100vh; /* 👈 one image per screen */
-}
 
-/* SECTION */
 
-/*    --gap:3rem;   this is for creating root elements people also calls it custom elements*/
-section {
-  border: 1px solid white;
-  --gap:3rem;                       
-  min-height: 100vh;
-  position: relative;
-  background-blend-mode: overlay;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 2;
-
-}
-
-canvas {
-  z-index: 0;
-}
-
-/* MAIN */
-main {
-  position: relative;
-}
 
 /* NAV */
 nav {
@@ -57,20 +28,35 @@ nav {
   font-family: system-ui;
 }
 
-.nav-elem:nth-child(2)
-i{
-color: red;
+.nav-elem:nth-child(2) i {
+  color: red;
 }
 
 
 
+
+
+/* SECTION */
+
+/*    --gap:3rem;   this is for creating root elements people also calls it custom elements*/
+section {
+  border: 1px solid white;
+  --gap: 3rem;
+  min-height: 100vh;
+  position: relative;
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+
+}
 
 /* MIDDLE */
 .middle {
   display: flex;
   align-items: flex-start;
   padding-top: 3rem;
-  gap:var(--gap);
+  gap: var(--gap);
 
 }
 
@@ -94,9 +80,9 @@ color: red;
   font-size: 90px;
 }
 
-.bottom{
+.bottom {
   display: flex;
-  gap:var(--gap);
+  gap: var(--gap);
 }
 
 .bottom .bleft,
@@ -104,19 +90,149 @@ color: red;
   width: 50%;
 
 }
-.fline{
+
+.fline {
   width: 55rem;
   background-color: rgba(255, 0, 0, 0.525);
-  height: 1px; 
+  height: 1px;
   position: absolute;
-  transform: rotate(45deg)translate(0,-20rem);
+  transform: rotate(45deg)translate(0, -20rem);
 }
-.sline{
+
+.sline {
   width: 20rem;
   background-color: rgba(255, 0, 0, 0.525);
-  height: 1px; 
+  height: 1px;
   position: absolute;
   transform: rotate(135deg);
   top: 28%;
-  right:8%;
+  right: 8%;
 }
+
+
+/* padding inline is used to give horizontal padding */
+#section2 {
+  .titles {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 5rem;
+    padding-left: 17rem;
+    padding-block: 10rem;
+
+
+    .title {
+      display: flex;
+      gap: 4rem;
+      opacity: 0.3;
+      padding-block: 2rem;
+      transition: all 0.3s linear;
+      cursor: pointer;
+
+      h1 {
+        font-size: 4.5rem;
+        font-weight: 100;
+        line-height: 1;
+      }
+
+      small {
+        margin-top: 0.6rem;
+        font-size: 0.6rem;
+      }
+    }
+
+    .title:hover {
+      opacity: 1;
+    }
+  }
+}
+
+/* canvas css */
+
+canvas {
+  z-index: 0;
+}
+
+#canvas-elem::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url(/background-xl.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.3s linear;
+}
+
+/* MAIN */
+main {
+  position: relative;
+}
+
+main:has(#section2 .title:hover) #canvas-elem::after {
+  opacity: 0;
+}
+
+
+.images {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
+}
+main:has(#section2 .title[img-title="tomorrowland"]:hover) .images #tomorrowland{
+  opacity: 1;
+  background-color: rgb(2, 7, 24);
+}
+main:has(#section2 .title[img-title="navy-pier"]:hover) .images #navy-pier{
+  opacity: 1;
+    background-color: rgb(2, 7, 24);
+
+}
+
+main:has(#section2 .title[img-title="msi-chicago"]:hover) .images #msi-chicago{
+  opacity: 1;
+    background-color: rgb(2, 7, 24);
+
+}
+
+main:has(#section2 .title[img-title="phone"]:hover) .images #phone{
+  opacity: 1;
+    background-color: rgb(2, 7, 24);
+
+}
+
+main:has(#section2 .title[img-title="kikk"]:hover) .images #kikk{
+  opacity: 1;
+    background-color: rgb(2, 7, 24);
+
+}
+
+main:has(#section2 .title[img-title="kennedy"]:hover) .images #kennedy{
+  opacity: 1;
+    background-color: rgb(2, 7, 24);
+
+}
+
+main:has(#section2 .title[img-title="opera"]:hover) .images #opera{
+  opacity: 1;
+    background-color: rgb(90, 4, 4);
+
+}
+
+
